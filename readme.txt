@@ -22,3 +22,7 @@ There are six kinds of moves each time. Analyze the situation of the last move. 
 The rest depends on the situation, if the column to take the disc has no disc, or if the uppermost disc of the target column is smaller than the disc to be moved, it is also removed.
 
 If there are still two moving situations that are legal, according to the observed rules, when the current disc to be moved and the last moved disc are not divisible by 2, the disc must be placed in the last moved disc. Above the disc, and vice versa, on another post.
+===============================================================
+hene3.py
+
+Improve hene2.py, simply use the loop to realize the Tower of Hanoi.
