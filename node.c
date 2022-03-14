@@ -23,12 +23,12 @@ NODE *first_horizontal_node(NODE *before_node);
 NODE *first_straight_node(NODE *before_node);
 NODE *fill_up_node(NODE *before_node);
 void remove_node(NODE *target_node);
-void run_node(NODE* head);
+void run_node(NODE *head);
 NODE *extend_node(NODE *before_node, char key_command);
-RH *make_rnode(RH *before_rnode, NODE* save_node);
+RH *make_rnode(RH *before_rnode, NODE *save_node);
 int where_closest(RH *rhead, int tx, int ty);
 void navigate_dijkstra(NODE *head, int tx, int ty);
-RH* RH_list(RH *move_use,RH *l_head,RH *r_head,int *best_step,int tx,int ty,NODE **goal_node);
+RH *RH_list(RH *move_use,RH *l_head,RH *r_head,int *best_step,int tx,int ty,NODE **goal_node);
 NODE *sup_OR(NODE *head,int direction);
 void output_route(NODE *head);
 
@@ -44,7 +44,7 @@ NODE *new_node(){//make the first node
 	return first;
 }
 
-RH *make_rnode(RH *before_rnode, NODE* save_node){//Add new record node 1. Previous record node 2. Node location to be saved 
+RH *make_rnode(RH *before_rnode, NODE *save_node){//Add new record node 1. Previous record node 2. Node location to be saved 
 	RH *rhead = (RH*)malloc(sizeof(RH));
 	rhead->node = save_node;
 	rhead->next = NULL;
@@ -90,7 +90,7 @@ void remove_node(NODE *target_node){//delete the specified node
 	free(target_node);
 }
 
-void run_node(NODE* head){//Use W, A, S, D to move between nodes, R and then delete the direction node by direction 
+void run_node(NODE *head){//Use W, A, S, D to move between nodes, R and then delete the direction node by direction 
 	char key_command = 'c';
 	int tx,ty;
 	while(key_command != 'q'){
@@ -145,7 +145,7 @@ void run_node(NODE* head){//Use W, A, S, D to move between nodes, R and then del
 	printf("break\n");
 }
 
-RH* RH_list(RH *move_use,RH *l_head,RH *r_head,int *best_step,int tx,int ty,NODE **goal_node){//Record the best route times, return the last position of the queue, and record the end node
+RH *RH_list(RH *move_use,RH *l_head,RH *r_head,int *best_step,int tx,int ty,NODE **goal_node){//Record the best route times, return the last position of the queue, and record the end node
 	if(move_use->node != NULL){
 		if(move_use->node->step == 0 && l_head->node->step + 1 <= *best_step){
 			move_use->node->step = l_head->node->step + 1;
