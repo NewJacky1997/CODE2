@@ -1,0 +1,12 @@
+After entering X Y when starting the program, a node map of X * Y size will be created.
+
+Enter w, a, s, d to move around the map and display your current location.If there is no node in the direction of movement, it will not let you past.
+
+Pressing r followed by w, a, s, d will delete the node in the direction of your choice.If there is no node in this direction, it cannot be deleted.
+
+Press t and then enter the X and Y coordinates, the shortest path from the current position to the target coordinates will be displayed.
+If the target location cannot be reached, it will display Unreachable.
+
+Press q to end the loop, or close it directly, I did not free the node.
+
+I am running with Dev C++.
